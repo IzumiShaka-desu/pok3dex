@@ -1,4 +1,8 @@
-class DetailPokemon {
+import 'package:equatable/equatable.dart';
+
+import '../../app/constants.dart';
+
+class DetailPokemon extends Equatable {
   final int id;
   final String pokemon;
   final String type;
@@ -7,7 +11,7 @@ class DetailPokemon {
   final List<String> evolutions;
   final String location;
   final String imageUrl;
-
+  String get fullImageUrl => "${Constants.baseUrlPngImages}$id.png";
   DetailPokemon({
     required this.id,
     required this.pokemon,
@@ -19,25 +23,15 @@ class DetailPokemon {
     required this.imageUrl,
   });
 
-  factory DetailPokemon.fromJson(Map<String, dynamic> json) => DetailPokemon(
-        id: json["id"],
-        pokemon: json["pokemon"],
-        type: json["type"],
-        abilities: List<String>.from(json["abilities"].map((x) => x)),
-        hitpoints: json["hitpoints"],
-        evolutions: List<String>.from(json["evolutions"].map((x) => x)),
-        location: json["location"],
-        imageUrl: json["image_url"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "pokemon": pokemon,
-        "type": type,
-        "abilities": List<dynamic>.from(abilities.map((x) => x)),
-        "hitpoints": hitpoints,
-        "evolutions": List<dynamic>.from(evolutions.map((x) => x)),
-        "location": location,
-        "image_url": imageUrl,
-      };
+  @override
+  List<Object?> get props => [
+        id,
+        pokemon,
+        type,
+        abilities,
+        hitpoints,
+        evolutions,
+        location,
+        imageUrl,
+      ];
 }
