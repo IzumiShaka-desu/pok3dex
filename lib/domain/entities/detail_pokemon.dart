@@ -12,7 +12,7 @@ class DetailPokemon extends Equatable {
   final String location;
   final String imageUrl;
   String get fullImageUrl => "${Constants.baseUrlPngImages}$id.png";
-  DetailPokemon({
+  const DetailPokemon({
     required this.id,
     required this.pokemon,
     required this.type,

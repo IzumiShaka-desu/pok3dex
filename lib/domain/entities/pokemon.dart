@@ -14,7 +14,7 @@ class Pokemon extends Equatable {
 
   String get fullImageUrl => "${Constants.baseUrlPngImages}$id.png";
 
-  Pokemon({
+  const Pokemon({
     required this.id,
     required this.pokemon,
     required this.type,
