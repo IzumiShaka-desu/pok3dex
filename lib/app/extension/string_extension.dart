@@ -20,6 +20,49 @@ extension StringExtension on String {
     return "${this[0].toUpperCase()}${substring(1)}";
   }
 
+  Color get typeAsColor {
+    switch (toLowerCase()) {
+      case "bug":
+        return fromHex("#A8B820");
+      case "dark":
+        return fromHex("#705848");
+      case "dragon":
+        return fromHex("#7038F8");
+      case "electric":
+        return fromHex("#F8D030");
+      case "fairy":
+        return fromHex("#EE99AC");
+      case "fighting":
+        return fromHex("#C03028");
+      case "fire":
+        return fromHex("#F08030");
+      case "flying":
+        return fromHex("#A890F0");
+      case "ghost":
+        return fromHex("#705898");
+      case "grass":
+        return fromHex("#78C850");
+      case "ground":
+        return fromHex("#E0C068");
+      case "ice":
+        return fromHex("#98D8D8");
+      case "normal":
+        return fromHex("#A8A878");
+      case "poison":
+        return fromHex("#A040A0");
+      case "psychic":
+        return fromHex("#F85888");
+      case "rock":
+        return fromHex("#B8A038");
+      case "steel":
+        return fromHex("#B8B8D0");
+      case "water":
+        return fromHex("#6890F0");
+      default:
+        return fromHex("#A8A77A");
+    }
+  }
+
   Color get colorNameAsColor {
     switch (this) {
       case "black":
