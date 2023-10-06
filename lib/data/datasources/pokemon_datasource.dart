@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:pok3dex/app/services/base_client.dart';
 import 'package:pok3dex/data/models/detail_pokemon_model.dart';
 import 'package:pok3dex/data/models/pokemon_model.dart';
@@ -7,7 +9,7 @@ class PokemonDatasource extends BaseClient {
         () async {
           final response = await get("/pokemon");
           return List<PokemonModel>.from(
-            response.data.map((x) => PokemonModel.fromJson(x)),
+            jsonDecode(response.data).map((x) => PokemonModel.fromJson(x)),
           );
         },
       );
