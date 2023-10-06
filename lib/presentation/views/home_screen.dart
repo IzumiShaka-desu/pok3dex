@@ -129,7 +129,8 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         Expanded(
                                           child: Image.network(
-                                            pokemon.fullImageUrl,
+                                            pokemon.imageUrl,
+                                            scale: 1 / 9000,
                                             width: 64,
                                           ),
                                         ),

@@ -152,7 +152,8 @@ class DetailScreen extends StatelessWidget {
                                   offset: const Offset(0, -128),
                                   child: Center(
                                     child: Image.network(
-                                      data.fullImageUrl,
+                                      data.imageUrl,
+                                      scale: 1 / 9000,
                                       width: MediaQuery.of(context).size.width *
                                           0.45,
                                     ),
